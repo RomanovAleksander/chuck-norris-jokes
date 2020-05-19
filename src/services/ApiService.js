@@ -1,5 +1,5 @@
 class ApiService {
-  _url = 'https://api.chucknorris.io/';
+  _url = 'https://api.chucknorris.io';
 
   errObj = (url, status) => {
     return {

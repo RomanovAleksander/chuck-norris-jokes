@@ -1,5 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { ApiService } from '../../services';
+import {
+  jokeLoaded, jokeRequested, jokeError,
+  jokesLoaded, jokesRequested, jokesError
+} from '../../actions/jokes/actions';
+import { FormSearch } from '../FormSearch';
+import { FormCategories } from '../FormCategories';
 
 import './form.scss';
 
@@ -7,68 +14,116 @@ class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      category: '',
+      category: 'dev',
       searchText: '',
       active: 'random'
     }
   }
 
-  checkInput= (e) => {
+  checkInput = (e) => {
     this.setState({
       active: e.target.id
     });
   };
 
-  onSearchChange = ({ target }) => {
-    const { searchJokes } = this.props;
-    const searchText = target.value;
-
-    // searchJokes(searchText);
+  onSearchChange = searchText => {
+    this.setState({ searchText });
   };
 
-  handleSubmit = ({}) => {
-    // e.preventDefault();
+  onCategoryChange = category => {
+    this.setState({ category });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const {
+      jokeLoaded, jokeRequested, jokeError,
+      jokesLoaded, jokesRequested, jokesError
+    } = this.props;
+    const { active, category, searchText } = this.state;
+
+    switch (active) {
+      case 'random':
+        jokeRequested();
+        ApiService.get('/jokes/random')
+          .then((data) => jokeLoaded(data))
+          .catch((err) => {
+            jokeError(err)
+          });
+        break;
+      case 'category':
+        jokeRequested();
+        ApiService.get(`/jokes/random?category=${category}`)
+          .then((data) => jokeLoaded(data))
+          .catch((err) => {
+            jokeError(err)
+          });
+        break;
+      case 'search':
+        jokesRequested();
+        ApiService.get(`/jokes/search?query=${searchText}`)
+          .then((data) => jokesLoaded(data))
+          .catch((err) => {
+            jokesError(err)
+          });
+        break;
+
+      default:
+        jokeRequested();
+        ApiService.get('/jokes/random')
+          .then((data) => jokeLoaded(data))
+          .catch((err) => {
+            jokeError(err)
+          });
+    }
   };
 
   render() {
     // const {  } = this.props;
-    const categories = <div>Categories</div>;
+
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
           <input
-            name="randomInput" id="random" type="radio" value="random"
+            name="jokeType" id="random" type="radio" value="random"
             checked={this.state.active === "random"}
             onChange={this.checkInput} />
           <label htmlFor="random">Random</label>
         </div>
         <div>
           <input
-            name="categoryInput" id="category" type="radio" value="category"
+            name="jokeType" id="category" type="radio" value="category"
             checked={this.state.active === "category"}
             onChange={this.checkInput} />
           <label htmlFor="category">From categories </label>
-          {this.state.active === "category" ? categories : null}
+          {this.state.active === "category" ? <FormCategories onCategoryChange={this.onCategoryChange} /> : null}
         </div>
         <div>
           <input
-            name="searchInput" id="search" type="radio" value="search"
+            name="jokeType" id="search" type="radio" value="search"
             checked={this.state.active === "search"}
             onChange={this.checkInput} />
           <label htmlFor="search">Search</label>
-          {this.state.active === "search" ? (<div>Search</div>) : null}
+          {this.state.active === "search" ? <FormSearch onSearchChange={this.onSearchChange} /> : null}
         </div>
+        <button type="submit">Get a joke</button>
       </form>
     );
   }
 }
 
 const mapDispatchToProps = {
-
+  jokeLoaded,
+  jokeRequested,
+  jokeError,
+  jokesLoaded,
+  jokesRequested,
+  jokesError
 };
 
 const mapStateToProps = state => ({
-
+  loading: state.jokes.loading,
+  error: state.jokes.error
 });
 
 export default connect(

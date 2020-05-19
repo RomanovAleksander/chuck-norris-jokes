@@ -1,9 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
 import './formSearch.scss';
 
-class FormSearch extends React.Component {
+export default class FormSearch extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -11,26 +9,23 @@ class FormSearch extends React.Component {
     }
   }
 
-  onSearchChange = ({ target }) => {
-
+  handleSearch = e => {
+    const { onSearchChange } = this.props;
+    const searchText = e.target.value;
+    this.setState({ searchText });
+    onSearchChange(searchText);
   };
 
   render() {
     return (
-      <div></div>
+      <div>
+        <input type="search"
+               onChange={this.handleSearch}
+               placeholder="search"
+               value={this.state.searchText}
+               minLength="3"
+        />
+      </div>
     );
   }
 }
-
-const mapDispatchToProps = {
-
-};
-
-const mapStateToProps = state => ({
-
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(FormSearch);
