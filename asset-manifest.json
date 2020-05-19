@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/chuck-norris-jokes/static/css/main.a191e023.chunk.css",
-    "main.js": "/chuck-norris-jokes/static/js/main.017e4d1d.chunk.js",
-    "main.js.map": "/chuck-norris-jokes/static/js/main.017e4d1d.chunk.js.map",
+    "main.css": "/chuck-norris-jokes/static/css/main.e62cc3f9.chunk.css",
+    "main.js": "/chuck-norris-jokes/static/js/main.90268ec3.chunk.js",
+    "main.js.map": "/chuck-norris-jokes/static/js/main.90268ec3.chunk.js.map",
     "runtime-main.js": "/chuck-norris-jokes/static/js/runtime-main.42ddd337.js",
     "runtime-main.js.map": "/chuck-norris-jokes/static/js/runtime-main.42ddd337.js.map",
-    "static/js/2.34457cc3.chunk.js": "/chuck-norris-jokes/static/js/2.34457cc3.chunk.js",
-    "static/js/2.34457cc3.chunk.js.map": "/chuck-norris-jokes/static/js/2.34457cc3.chunk.js.map",
+    "static/js/2.c64c28cf.chunk.js": "/chuck-norris-jokes/static/js/2.c64c28cf.chunk.js",
+    "static/js/2.c64c28cf.chunk.js.map": "/chuck-norris-jokes/static/js/2.c64c28cf.chunk.js.map",
     "index.html": "/chuck-norris-jokes/index.html",
-    "precache-manifest.6d9f368bff96a55e7304ac633dbd820e.js": "/chuck-norris-jokes/precache-manifest.6d9f368bff96a55e7304ac633dbd820e.js",
+    "precache-manifest.d87a24081150b5e88d51078e19491eae.js": "/chuck-norris-jokes/precache-manifest.d87a24081150b5e88d51078e19491eae.js",
     "service-worker.js": "/chuck-norris-jokes/service-worker.js",
-    "static/css/main.a191e023.chunk.css.map": "/chuck-norris-jokes/static/css/main.a191e023.chunk.css.map"
+    "static/css/main.e62cc3f9.chunk.css.map": "/chuck-norris-jokes/static/css/main.e62cc3f9.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.42ddd337.js",
-    "static/js/2.34457cc3.chunk.js",
-    "static/css/main.a191e023.chunk.css",
-    "static/js/main.017e4d1d.chunk.js"
+    "static/js/2.c64c28cf.chunk.js",
+    "static/css/main.e62cc3f9.chunk.css",
+    "static/js/main.90268ec3.chunk.js"
   ]
 }
