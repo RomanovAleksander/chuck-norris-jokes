@@ -12,11 +12,11 @@ const initialState = {
   jokes: [],
   joke: {},
   searchText: '',
-  loading: true,
+  loading: false,
   error: null
 };
 
-const updateJokesList = (jokesList, item, idx) => {
+const updateJokeList = (jokesList, item, idx) => {
   if (idx === -1) {
     return [
       ...jokesList,
@@ -46,7 +46,7 @@ export const jokes = (state = initialState, action) => {
 
       return {
         ...state,
-        jokes: updateJokesList(jokes, payload, itemIndex),
+        jokes: updateJokeList(jokes, payload, itemIndex),
         joke: payload,
         loading: false,
         error: null
