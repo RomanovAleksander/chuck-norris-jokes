@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.header {
+  .title {
+    width: 87px;
+    height: 28px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    margin-top: 78px;
+
+    &__hey {
+      width: 100%;
+      height: 44px;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 44px;
+    }
+
+    &__lets-try {
+      height: 44px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 44px;
+    }
+  }
+}

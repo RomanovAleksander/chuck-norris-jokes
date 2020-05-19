@@ -2,10 +2,34 @@
 @import '../../styles/variables.scss';
 
 body {
+    position: relative;
+    max-width: 1440px;
     color: $text-color;
+    background-color: $main-background;
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 26px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 900px;
+    display: flex;
+
+    border: 1px solid black;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 66.7%;
+    padding: 40px 140px 140px 140px;
+}
+
+.favourite-container {
+    width: 33.3%;
+    background-color: $second-background;
 }
