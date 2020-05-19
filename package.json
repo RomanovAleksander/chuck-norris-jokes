@@ -1,5 +1,5 @@
 {
-  "name": "js-band-final-task",
+  "name": "chuck-norris-jokes",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -20,7 +20,7 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "node-sass": "^4.13.0"
+    "node-sass": "4.13.0"
   },
   "eslintConfig": {
     "extends": "react-app"
