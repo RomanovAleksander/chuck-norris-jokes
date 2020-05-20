@@ -41,9 +41,9 @@ class FormCategories extends React.Component {
     return (
       <div className="categories-list">
         {
-          categories.map((category) => {
+          categories.slice(0, 4).map((category) => {
             return (
-              <div key={category}>
+              <div key={category} className="categories-list__category">
                 <FormCategory category={category} changeCategory={this.handleChange}/>
               </div>
             )

@@ -5,7 +5,7 @@ export class FormCategory extends React.Component {
   constructor() {
     super();
     this.state = {
-      active: 'animal'
+      active: ''
     }
   }
 
@@ -23,7 +23,7 @@ export class FormCategory extends React.Component {
     return (
       <>
         <input id={category} type="radio" value={category} name="category"
-               onChange={this.selectCategory}
+               onChange={this.selectCategory} required
         />
         <label htmlFor={category}>{category}</label>
       </>

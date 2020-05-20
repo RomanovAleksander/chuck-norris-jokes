@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.categories-list {
+  &__category {
+    padding-left: 0;
+    padding-right: 10px;
+    margin-top: 10px;
+
+    input {
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      width: 1rem;
+      height: 1.25rem;
+      opacity: 0;
+      overflow: visible;
+      margin: 0;
+    }
+
+    label {
+      padding: 5px 12px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ABABAB;
+      border: 2px solid #F8F8F8;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    input:checked+label {
+      color: $text-color;
+      border-color: #F8F8F8;
+      background-color: #F8F8F8;
+    }
+
+    input:not(:disabled):not(:checked)+label:hover {
+      border-color: $text-color;
+      color: $text-color;
+      opacity: 0.8;
+    }
+
+    input:not(:disabled):active+label {
+      background-color: #ABABAB;
+      border-color: #ABABAB;
+    }
+
+    input:focus:not(:checked)+label {
+      border-color: $text-color;
+    }
+  }
+}

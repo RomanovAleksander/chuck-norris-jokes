@@ -18,12 +18,14 @@ export default class FormSearch extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="search-wrapper">
         <input type="search"
+               className="form-search"
                onChange={this.handleSearch}
-               placeholder="search"
+               placeholder="Free text search..."
                value={this.state.searchText}
                minLength="3"
+               required
         />
       </div>
     );
