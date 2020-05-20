@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
+import {JokeItem} from '../JokeItem';
 import './jokeList.scss';
 
 const JokeList = ({ jokes, loading, error }) => {
@@ -15,7 +15,7 @@ const JokeList = ({ jokes, loading, error }) => {
           jokes.map((joke) => {
             return (
               <div key={joke.id}>
-                {joke.value}
+                <JokeItem joke={joke}/>
               </div>
             )
           })

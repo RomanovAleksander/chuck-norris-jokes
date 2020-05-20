@@ -1,0 +1,1 @@
+export { JokeItem } from './JokeItem';

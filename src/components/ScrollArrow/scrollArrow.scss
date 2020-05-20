@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.back-top {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 3%;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 5px;
+    border: 3px solid #8DA7FF;
+    border-radius: 50%;
+    cursor: pointer;
+    img {
+        width: 80%;
+        height: 70%;
+    }
+    &:hover {
+        background-color: rgba(38, 143, 255, 0.2);
+    }
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
