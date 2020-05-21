@@ -16,18 +16,15 @@ body {
 
 .wrapper {
     width: 100%;
-    min-height: 900px;
+    min-height: 100vh;
     display: flex;
 }
 
 .main-container {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 66.7%;
+    width: 960px;
+    max-width: 960px;
     padding: 40px 140px 140px 140px;
-}
-
-.favourite-container {
-    width: 33.3%;
-    background-color: $second-background;
 }

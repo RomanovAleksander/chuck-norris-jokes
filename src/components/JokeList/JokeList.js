@@ -1,42 +1,41 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { JokeItem } from '../JokeItem';
 import { Loader } from '../Loader';
+import { ErrorIndicator } from '../ErrorIndicator';
 import './jokeList.scss';
 
-const JokeList = ({ jokes, loading, error }) => {
-  if (loading) {
+export const JokeList = ({ jokes, favouritesJokes, loading, error, addJoke, removeJoke, favourites }) => {
+  const isFavourites = favourites ? favouritesJokes : jokes;
+  const isFav = favourites === true ? 'joke-list fav' : 'joke-list';
+
+  if (loading && !favourites) {
     return <Loader />
   }
 
-  if (jokes) {
+  if (error) {
     return (
       <div className="joke-list">
-        {
-          jokes.map((joke) => {
-            return (
-              <div key={joke.id}>
-                <JokeItem joke={joke}/>
-              </div>
-            )
-          })
-        }
+        <ErrorIndicator />
       </div>
     )
   }
+
+  return (
+    <div className={isFav}>
+      {
+        isFavourites.map((joke) => {
+          return (
+            <div key={joke.id}>
+              <JokeItem
+                joke={joke}
+                isFavourite={favouritesJokes.find((item) => joke.id === item.id)}
+                addJoke={() => addJoke(joke)}
+                removeJoke={() => removeJoke(joke)}
+                favourites={favourites} />
+            </div>
+          )
+        })
+      }
+    </div>
+  )
 };
-
-const mapDispatchToProps = {
-
-};
-
-const mapStateToProps = state => ({
-  jokes: state.jokes.jokes,
-  loading: state.jokes.loading,
-  error: state.jokes.error
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(JokeList);

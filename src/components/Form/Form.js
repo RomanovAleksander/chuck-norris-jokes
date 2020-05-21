@@ -123,8 +123,7 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = state => ({
-  loading: state.jokes.loading,
-  error: state.jokes.error
+
 });
 
 export default connect(

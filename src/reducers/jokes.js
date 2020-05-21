@@ -5,11 +5,14 @@ import {
   FETCH_JOKES_REQUEST,
   FETCH_JOKES_SUCCESS,
   FETCH_JOKES_FAILURE,
-  SEARCH_JOKES
+  ADD_JOKE,
+  REMOVE_JOKE
 } from '../actions/jokes/types';
+import { LocalStorageService } from '../services';
 
 const initialState = {
   jokes: [],
+  favouritesJokes: [],
   joke: {},
   searchText: '',
   loading: false,
@@ -30,8 +33,19 @@ const updateJokeList = (jokesList, item, idx) => {
   ]
 };
 
-export const jokes = (state = initialState, action) => {
+export const jokes = (state, action) => {
   const { type, payload } = action;
+  if (state === undefined) {
+    if (localStorage.favouritesJokes) {
+      return {
+        ...initialState,
+        favouritesJokes: LocalStorageService.getItem('favouritesJokes')
+      }
+    } else {
+      return initialState;
+    }
+  }
+
   switch (type) {
     case FETCH_JOKE_REQUEST:
       return {
@@ -91,10 +105,19 @@ export const jokes = (state = initialState, action) => {
         loading: false,
         error: payload
       };
-    case SEARCH_JOKES:
+    case ADD_JOKE:
+      const newFavouritesJokes = [...state.favouritesJokes, payload];
+      LocalStorageService.setItem('favouritesJokes', newFavouritesJokes);
       return {
         ...state,
-        searchText: payload.searchText
+        favouritesJokes: newFavouritesJokes
+      };
+    case REMOVE_JOKE:
+      const updatedFavouritesJokes = state.favouritesJokes.filter((joke) => joke.id !== payload);
+      LocalStorageService.setItem('favouritesJokes', updatedFavouritesJokes);
+      return {
+        ...state,
+        favouritesJokes: updatedFavouritesJokes
       };
 
     default:

@@ -1,3 +1,1 @@
-import FormCategories from './FormCategories';
-
-export { FormCategories };
+export { JokeList} from './JokeList';

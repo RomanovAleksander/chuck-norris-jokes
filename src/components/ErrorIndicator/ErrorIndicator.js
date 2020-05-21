@@ -6,7 +6,7 @@ export const ErrorIndicator = ({ status }) => {
     <>
     <div className="error-indicator">
       Ops... Something went wrong
-      {status &&  <p>Try reload the page</p>}
+      {status &&  <p>Reload the page</p>}
     </div>
     </>
   )

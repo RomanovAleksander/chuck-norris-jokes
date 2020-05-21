@@ -5,7 +5,8 @@ import {
   FETCH_JOKES_FAILURE,
   FETCH_JOKES_REQUEST,
   FETCH_JOKES_SUCCESS,
-  SEARCH_JOKES
+  ADD_JOKE,
+  REMOVE_JOKE
 } from './types';
 
 const jokeRequested = () => {
@@ -48,12 +49,20 @@ const jokesError = (error) => {
   };
 };
 
-const searchJokes = (searchText) => ({
-  type: SEARCH_JOKES,
-  payload: {
-    searchText
-  }
-});
+const addJoke = (joke) => {
+  return {
+    type: ADD_JOKE,
+    payload: joke
+  };
+};
+
+const removeJoke = (joke) => {
+  return {
+    type: REMOVE_JOKE,
+    payload: joke.id
+  };
+};
+
 
 export {
   jokeRequested,
@@ -62,5 +71,6 @@ export {
   jokesRequested,
   jokesLoaded,
   jokesError,
-  searchJokes
+  addJoke,
+  removeJoke
 };
