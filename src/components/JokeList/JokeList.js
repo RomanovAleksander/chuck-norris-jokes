@@ -1,11 +1,12 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {JokeItem} from '../JokeItem';
+import { connect } from 'react-redux';
+import { JokeItem } from '../JokeItem';
+import { Loader } from '../Loader';
 import './jokeList.scss';
 
 const JokeList = ({ jokes, loading, error }) => {
   if (loading) {
-    return <div>Loading...</div>
+    return <Loader />
   }
 
   if (jokes) {
