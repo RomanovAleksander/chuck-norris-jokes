@@ -81,29 +81,35 @@ class Form extends React.Component {
     return (
       <form className="jokes-form" onSubmit={this.handleSubmit}>
         <div className="jokes-form__component">
-          <input
-            className="custom-checkbox"
-            name="jokeType" id="random" type="radio" value="random"
-            checked={this.state.active === "random"}
-            onChange={this.checkInput} />
-          <label htmlFor="random">Random</label>
+          <label htmlFor="random" className="custom-checkbox-label">
+            <input
+              className="custom-checkbox"
+              name="jokeType" id="random" type="radio" value="random"
+              checked={this.state.active === "random"}
+              onChange={this.checkInput}/>
+            Random
+          </label>
         </div>
         <div className="jokes-form__component">
-          <input
-            className="custom-checkbox"
-            name="jokeType" id="category" type="radio" value="category"
-            checked={this.state.active === "category"}
-            onChange={this.checkInput} />
-          <label htmlFor="category">From categories </label>
+          <label htmlFor="category" className="custom-checkbox-label">
+            <input
+              className="custom-checkbox"
+              name="jokeType" id="category" type="radio" value="category"
+              checked={this.state.active === "category"}
+              onChange={this.checkInput}/>
+            From categories
+          </label>
           {this.state.active === "category" ? <FormCategories onCategoryChange={this.onCategoryChange} /> : null}
         </div>
         <div className="jokes-form__component">
-          <input
-            className="custom-checkbox"
-            name="jokeType" id="search" type="radio" value="search"
-            checked={this.state.active === "search"}
-            onChange={this.checkInput} />
-          <label htmlFor="search">Search</label>
+          <label htmlFor="search" className="custom-checkbox-label">
+            <input
+              className="custom-checkbox"
+              name="jokeType" id="search" type="radio" value="search"
+              checked={this.state.active === "search"}
+              onChange={this.checkInput}/>
+            Search
+          </label>
           {this.state.active === "search" ? <FormSearch onSearchChange={this.onSearchChange} /> : null}
         </div>
         <button type="submit" className="btn">Get a joke</button>
