@@ -33,7 +33,7 @@ const Favourites = ({ jokes, favouritesJokes, loading, error, addJoke, removeJok
         <span>Favourite</span>
       </div>
       <div className={`favourites-container ${isMenuOpen}`}>
-        <div className="favourites-title">Favorite</div>
+        <div className="favourites-title">Favourite</div>
         <JokeList jokes={jokes}
                   favouritesJokes={favouritesJokes}
                   loading={loading}
