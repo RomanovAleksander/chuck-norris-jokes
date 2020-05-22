@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8d7f3e6b28e9b0afd76c547f53fafcc9",
+    "revision": "8497e2051d41f328dfeff2d1b3b2e4cc",
     "url": "/chuck-norris-jokes/index.html"
   },
   {
-    "revision": "1aea25349e4d4571693d",
-    "url": "/chuck-norris-jokes/static/css/main.dc8f2a73.chunk.css"
+    "revision": "2ddf7f36f79a511c0efd",
+    "url": "/chuck-norris-jokes/static/css/main.4ba312d1.chunk.css"
   },
   {
     "revision": "62a9838cab0f04f073ce",
     "url": "/chuck-norris-jokes/static/js/2.4fe3ab07.chunk.js"
   },
   {
-    "revision": "1aea25349e4d4571693d",
-    "url": "/chuck-norris-jokes/static/js/main.7f99552f.chunk.js"
+    "revision": "2ddf7f36f79a511c0efd",
+    "url": "/chuck-norris-jokes/static/js/main.ff887e41.chunk.js"
   },
   {
     "revision": "028f5936122dfbaf60d9",
