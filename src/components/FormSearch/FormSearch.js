@@ -9,7 +9,7 @@ export default class FormSearch extends React.Component {
     }
   }
 
-  handleSearch = e => {
+  handleSearch = (e) => {
     const { onSearchChange } = this.props;
     const searchText = e.target.value;
     this.setState({ searchText });

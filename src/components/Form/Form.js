@@ -7,7 +7,6 @@ import {
 } from '../../actions/jokes/actions';
 import { FormSearch } from '../FormSearch';
 import { FormCategories } from '../FormCategories';
-
 import './form.scss';
 
 class Form extends React.Component {
@@ -26,11 +25,11 @@ class Form extends React.Component {
     });
   };
 
-  onSearchChange = searchText => {
+  onSearchChange = (searchText) => {
     this.setState({ searchText });
   };
 
-  onCategoryChange = category => {
+  onCategoryChange = (category) => {
     this.setState({ category });
   };
 

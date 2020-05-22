@@ -5,7 +5,6 @@ import {
   categoriesLoaded, categoriesRequested, categoriesError
 } from '../../actions/categories/actions';
 import { FormCategory } from '../FormCategory';
-
 import './formCategories.scss';
 
 class FormCategories extends React.Component {
@@ -29,7 +28,7 @@ class FormCategories extends React.Component {
       });
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { onCategoryChange } = this.props;
     const category = e.target.value;
     this.setState({ category });

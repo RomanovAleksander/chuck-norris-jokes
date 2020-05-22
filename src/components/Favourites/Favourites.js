@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addJoke, removeJoke, toggleMenu } from '../../actions/jokes/actions';
+import { addJoke, removeJoke } from '../../actions/jokes/actions';
+import { toggleMenu } from '../../actions/menu/actions';
 import { JokeList } from '../JokeList';
 import './favourites.scss';
 
@@ -56,7 +57,7 @@ const mapStateToProps = state => ({
   favouritesJokes: state.jokes.favouritesJokes,
   loading: state.jokes.loading,
   error: state.jokes.error,
-  isOpen: state.jokes.isOpen
+  isOpen: state.menu.isOpen
 });
 
 export default connect(

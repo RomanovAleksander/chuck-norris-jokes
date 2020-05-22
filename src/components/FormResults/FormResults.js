@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
   favouritesJokes: state.jokes.favouritesJokes,
   loading: state.jokes.loading,
   error: state.jokes.error,
-  isOpen: state.jokes.isOpen
+  isOpen: state.menu.isOpen
 });
 
 export default connect(
