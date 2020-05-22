@@ -4,6 +4,7 @@
 body {
     position: relative;
     max-width: 1440px;
+    margin: 0 auto;
     color: $text-color;
     background-color: $main-background;
     font-family: Roboto, sans-serif;
@@ -11,7 +12,6 @@ body {
     font-weight: normal;
     font-size: 18px;
     line-height: 26px;
-    margin: 0 auto;
 }
 
 .wrapper {
@@ -88,6 +88,11 @@ body {
     .favourites-container {
         min-width: 360px;
         width: 100%;
+    }
+
+    .back-top {
+        width: 2rem;
+        height: 2rem;
     }
 }
 
