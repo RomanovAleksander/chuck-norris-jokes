@@ -133,4 +133,4 @@ $ npm run deploy - deploy application on gh-pages
 ├── README.md
 ├── yarn.lock
 ```
-[Go to top](https://github.com/RomanovAleksander/chuck-norris-jokes#chuck-norris-jokes)
+[Go to top](https://github.com/RomanovAleksander/chuck-norris-jokes#chuck-norris-jokes-)
