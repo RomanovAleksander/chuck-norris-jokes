@@ -6,7 +6,8 @@ import {
   FETCH_JOKES_SUCCESS,
   FETCH_JOKES_FAILURE,
   ADD_JOKE,
-  REMOVE_JOKE
+  REMOVE_JOKE,
+  TOGGLE_MENU
 } from '../actions/jokes/types';
 import { LocalStorageService } from '../services';
 
@@ -16,7 +17,8 @@ const initialState = {
   joke: {},
   searchText: '',
   loading: false,
-  error: null
+  error: null,
+  isOpen: false
 };
 
 const updateJokeList = (jokesList, item, idx) => {
@@ -118,6 +120,11 @@ export const jokes = (state, action) => {
       return {
         ...state,
         favouritesJokes: updatedFavouritesJokes
+      };
+    case TOGGLE_MENU:
+      return {
+        ...state,
+        isOpen: !state.isOpen,
       };
 
     default:

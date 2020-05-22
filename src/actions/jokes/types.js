@@ -8,3 +8,5 @@ export const FETCH_JOKES_FAILURE = 'FETCH_JOKES_FAILURE';
 
 export const ADD_JOKE = 'ADD_JOKE';
 export const REMOVE_JOKE = 'REMOVE_JOKE';
+
+export const TOGGLE_MENU = 'TOGGLE_MENU';

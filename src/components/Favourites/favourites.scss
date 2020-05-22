@@ -1,8 +1,26 @@
 @import '../../styles/variables.scss';
 
+.menu {
+  position: absolute;
+  display: none;
+  top: 40px;
+  right: 40px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ABABAB;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    margin-left: 10px;
+  }
+}
+
 .favourites-container {
-  width: 480px;
+  min-width: 480px;
   background-color: $second-background;
+  z-index: 3;
 
   .favourites-title {
     width: 100%;

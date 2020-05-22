@@ -6,7 +6,8 @@ import {
   FETCH_JOKES_REQUEST,
   FETCH_JOKES_SUCCESS,
   ADD_JOKE,
-  REMOVE_JOKE
+  REMOVE_JOKE,
+  TOGGLE_MENU
 } from './types';
 
 const jokeRequested = () => {
@@ -63,6 +64,11 @@ const removeJoke = (joke) => {
   };
 };
 
+const toggleMenu = () => {
+  return {
+    type: TOGGLE_MENU
+  };
+};
 
 export {
   jokeRequested,
@@ -72,5 +78,6 @@ export {
   jokesLoaded,
   jokesError,
   addJoke,
-  removeJoke
+  removeJoke,
+  toggleMenu
 };

@@ -122,11 +122,7 @@ const mapDispatchToProps = {
   jokesError
 };
 
-const mapStateToProps = state => ({
-
-});
-
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Form);

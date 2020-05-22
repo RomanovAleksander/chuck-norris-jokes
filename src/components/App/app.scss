@@ -26,5 +26,82 @@ body {
     flex-direction: column;
     width: 960px;
     max-width: 960px;
-    padding: 40px 140px 140px 140px;
+    padding: 40px 140px 40px 140px;
+}
+
+@media only screen and (max-width: 834px) {
+    .main-container {
+        padding: 40px;
+        width: 100%;
+    }
+
+    .fav {
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    .joke-item, .form-search {
+        max-width: 754px;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .favourites-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        max-width: 480px;
+        min-width: 480px;
+        box-sizing: border-box;
+
+        .favourites-title {
+            display: none;
+        }
+    }
+
+    .open {
+        display: block;
+        padding-top: 68px;
+    }
+
+    .background {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.3);
+        height: 100vh;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .white {
+        max-width: 400px;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .favourites-container {
+        min-width: 360px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .main-container {
+        padding: 20px;
+    }
+
+    .menu {
+        top: 20px;
+        right: 20px;
+    }
+
+    .dark {
+        padding: 20px;
+    }
 }
