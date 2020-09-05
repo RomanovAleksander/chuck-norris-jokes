@@ -20,7 +20,7 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "node-sass": "4.13.0"
+    "node-sass": "4.13.1"
   },
   "eslintConfig": {
     "extends": "react-app"
